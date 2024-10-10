@@ -1,4 +1,4 @@
-﻿namespace Hemuppgift_Arv_Temp
+﻿namespace Hemuppgift_Arv_Temp.Game
 {
     internal class TakePins
     {
