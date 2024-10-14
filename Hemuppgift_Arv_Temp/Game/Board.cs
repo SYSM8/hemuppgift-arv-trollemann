@@ -29,8 +29,6 @@
         int takePins;
         public void TakePins(int takePins)
         {
-            Console.Write("take 1 or 2 pins: ");
-            takePins = Convert.ToInt32(Console.ReadLine());
 
             if (takePins < 1 || takePins > 2)
             {
