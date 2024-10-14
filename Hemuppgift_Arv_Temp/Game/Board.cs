@@ -12,33 +12,49 @@
         //tilldela en vald mängd stickor till noPins
         public void SetUp()
         {
-            Console.Write("enter the amounts of pins to play with: ");
-            int setUp = Convert.ToInt32(Console.ReadLine());
 
-            if (setUp > 0)
+            //loopa tills vi får en giltig inmatning
+            bool validInput = false;
+            while (!validInput)
             {
-                NoPins = setUp;
-                Console.WriteLine($"amount of pins added: {NoPins}");
-            }
-            else
-            {
-                Console.WriteLine("\namount needs to be more than 0");
+                try
+                {
+                    Console.Write("enter the amounts of pins to play with: ");
+                    int setUp = Convert.ToInt32(Console.ReadLine());
+
+                    if (setUp > 0)
+                    {
+                        NoPins = setUp;
+                        Console.WriteLine($"amount of pins added: {NoPins}");
+                        validInput = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("\namount needs to be more than 0");
+                    }
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine("error: only enter numbers");
+                    Console.WriteLine(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
-
 
         //ta stickor från "bordet"
         public void TakePins(int takePins)
         {
             if (takePins < 1 || takePins > 2)
             {
-                Console.WriteLine("can only take 1 or two pins");
                 return;
             }
 
             if (NoPins < takePins)
             {
-                Console.WriteLine("not enough pins left.");
                 return;
             }
 

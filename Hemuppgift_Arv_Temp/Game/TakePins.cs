@@ -4,13 +4,13 @@
     {
         public static void Main(string[] args)
         {
-            //skapa ett bräde med ett antal stickor
+            //skapa ett instans av spelet
             Board board = new Board();
 
-            //den mänskliga spelaren
+            //mänskliga spelaren
             HumanPlayer humanPlayer = new HumanPlayer("");
 
-            //datorspelaren "einstein"
+            //datorspelaren
             ComputerPlayer computerPlayer = new ComputerPlayer("");
 
             //tillkallar metoden setUp

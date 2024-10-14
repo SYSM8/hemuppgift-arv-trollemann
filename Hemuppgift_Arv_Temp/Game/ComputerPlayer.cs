@@ -27,6 +27,11 @@ namespace Hemuppgift_Arv_Temp.Game
             //skickar värdet till TakePins(board)
             board.TakePins(pinsTaken);
 
+            if (board.NoPins <= 0)
+            {
+                Console.WriteLine($"\n{UserId} wins!");
+            }
+
             //returnerar antalet stickor som finns kvar i spelet
             return board.NoPins;
         }
