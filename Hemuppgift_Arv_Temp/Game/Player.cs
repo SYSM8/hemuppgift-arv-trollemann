@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Hemuppgift_Arv_Temp.Game
+﻿namespace Hemuppgift_Arv_Temp.Game
 {
     public abstract class Player
     {
-        //property
+        //ärver från computer- eller humanplayer
         private string userId;
         public string UserId
         {
@@ -16,21 +10,19 @@ namespace Hemuppgift_Arv_Temp.Game
             set { userId = value; }
         }
 
-        //constructor
+        //tilldelar namn
         public Player(string userId)
         {
             UserId = userId;
         }
 
-        //method
         //returnerar spelarens namn
         public string GetUserId()
         {
             return userId;
         }
 
-        //abstract method
         //ärver från underklasserna HumanPlayer och ComputerPlayer
-        public abstract int TakePins (Board board);
+        public abstract int TakePins(Board board);
     }
 }

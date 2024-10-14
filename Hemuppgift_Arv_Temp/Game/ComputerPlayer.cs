@@ -9,16 +9,20 @@ namespace Hemuppgift_Arv_Temp.Game
 {
     public class ComputerPlayer : Player
     {
+        //tilldela namn till npc
         public ComputerPlayer(string userId) : base(userId)
         {
-            UserId = "Einstein";
+            Console.Write("enter npc's name: ");
+            UserId = Console.ReadLine();
         }
+
+        //npc tur att ta pinnar
         public override int TakePins(Board board)
         {
             Random random = new Random();
-            int pinsTaken = random.Next(1, 2);
+            int pinsTaken = random.Next(1, 3);
 
-            Console.WriteLine($"{UserId} has taken {pinsTaken} pins");
+            Console.WriteLine($"\n{UserId} turn\n\npins taken: {pinsTaken}");
             
             //skickar värdet till TakePins(board)
             board.TakePins(pinsTaken);

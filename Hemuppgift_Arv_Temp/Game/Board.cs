@@ -2,7 +2,6 @@
 {
     public class Board
     {
-        // property (egenskap/attribut)
         private int noPins;
         public int NoPins
         {
@@ -10,9 +9,12 @@
             set { noPins = value; }
         }
 
-        // metod för att tilldela en vald mängd stickor till noPins
-        public void SetUp(int setUp)
+        //tilldela en vald mängd stickor till noPins
+        public void SetUp()
         {
+            Console.Write("enter the amounts of pins to play with: ");
+            int setUp = Convert.ToInt32(Console.ReadLine());
+
             if (setUp > 0)
             {
                 NoPins = setUp;
@@ -25,11 +27,9 @@
         }
 
 
-        // metod för att ta stickor från "bordet"
-        int takePins;
+        //ta stickor från "bordet"
         public void TakePins(int takePins)
         {
-
             if (takePins < 1 || takePins > 2)
             {
                 Console.WriteLine("can only take 1 or two pins");
@@ -42,11 +42,12 @@
                 return;
             }
 
-            // minska antalet stickor i spelet
+            //minska antalet stickor i spelet
             NoPins -= takePins;
             GetNoPins();
         }
 
+        //skriver ut mängd pinnar kvar
         public void GetNoPins()
         {
             Console.WriteLine($"amount of pins left: {NoPins}");
