@@ -19,7 +19,7 @@
             {
                 try
                 {
-                    Console.Write("enter the amounts of pins to play with: ");
+                    Console.Write("\nenter the amounts of pins to play with: ");
                     int setUp = Convert.ToInt32(Console.ReadLine());
 
                     if (setUp > 0)

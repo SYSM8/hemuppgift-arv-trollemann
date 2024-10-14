@@ -7,11 +7,12 @@
             //skapa ett instans av spelet
             Board board = new Board();
 
-            //mänskliga spelaren
+            //hooman player
             HumanPlayer humanPlayer = new HumanPlayer("");
 
-            //datorspelaren
+            //compooter player
             ComputerPlayer computerPlayer = new ComputerPlayer("");
+            
 
             //tillkallar metoden setUp
             board.SetUp();
