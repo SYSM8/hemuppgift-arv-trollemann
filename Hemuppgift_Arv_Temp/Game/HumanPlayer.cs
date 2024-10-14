@@ -3,8 +3,9 @@
     public class HumanPlayer : Player
     {
         //constructor
-        public HumanPlayer(string userId) : base(userId)
+        public HumanPlayer (string userId) : base(userId)
         {
+            Console.Write("enter name: ");
             UserId = Console.ReadLine();
         }
 
@@ -12,10 +13,12 @@
         {
             //välj antal pinnar att ta
             Console.Write("take 1 or 2 pins: ");
-            int pinsToTake = Convert.ToInt32(Console.ReadLine());
+            int pinsTaken = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine($"{UserId} has taken {pinsTaken} pins");
 
             //skickar värdet till TakePins(board)
-            board.TakePins(pinsToTake);
+            board.TakePins(pinsTaken);
 
             //returnerar antalet stickor som finns kvar i spelet
             return board.NoPins;
